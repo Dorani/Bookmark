@@ -34,6 +34,9 @@ function saveBookmark(event){
 
   }
 
+  //re-fetch bookmarks
+  fetchBookmarks();
+
   //prevent form from submitting
   event.preventDefault();
 }
@@ -50,8 +53,11 @@ function deleteBookmarks(url){
       bookmarks.splice(i , 1);
     }
   }
+//re-set back to localStorage
+localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
 
-
+// re-fetch bookmarks, so no need to reload page after an action occurs
+fetchBookmarks();
 
 }
 
@@ -76,7 +82,7 @@ function fetchBookmarks(){
       bookmarksResults.innerHTML += '<div class ="well">' +
                                     '<h3>' + name +
                                     ' <a class="btn btn-default" target="_blank" href="'+url+'">Visit</a>' +
-                                    ' <a onclick="deleteBookmark(\''+url+'\')" class="btn btn-danger" href="#">Delete</a>' +
+                                    ' <a onclick="deleteBookmarks(\''+url+'\')" class="btn btn-danger" href="#">Delete</a>' +
                                     '</h3>' +
                                     '</div>';
 
