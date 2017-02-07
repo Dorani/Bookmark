@@ -12,16 +12,16 @@ function saveBookmark(event){
   }
 
   // local storage test
-  localStorage.setItem('test', 'hello world');
+  //localStorage.setItem('test', 'hello world');
   //test if bookmarks is null
   if(localStorage.getItem('bookmarks') === null){
     //init array
     var bookmarks = [];
     //add to array
-    bookmarks.push();
+    bookmarks.push(bookmark);
     //set to localStorage
     //json array and turn it into a string before it gets saved in local storage
-    localStorage.setItem('bookmarks', JSON.stringigy(bookmarks));
+    localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
   } else { //if there is something in bookmark
     //fetch it from local storage
     //create var that takes in the string that gets parsed back into json
@@ -29,7 +29,7 @@ function saveBookmark(event){
     //add bookmark to array
     bookmarks.push(bookmark);
     //set it back to localStorage
-    localStorage.setItem('bookmarks', JSON.stringigy(bookmarks));
+    localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
 
 
   }
