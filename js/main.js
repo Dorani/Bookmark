@@ -6,6 +6,13 @@ function saveBookmark(event){
   var siteName = document.getElementById('siteName').value;
   var siteUrl = document.getElementById('siteUrl').value;
 
+  //if either one of these are not here, then we will want to alert
+  if(!siteName || !siteUrl){
+    alert('please fill in form');
+    //in order for it to stop:
+    return false;
+  }
+
   var bookmark = {
     name: siteName,
     url: siteUrl
