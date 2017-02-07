@@ -12,7 +12,7 @@ function saveBookmark(event){
   }
 
   // local storage test
-  l
+  localStorage.setItem('test', 'hello world');
 
   //prevent form from submitting
   event.preventDefault();
