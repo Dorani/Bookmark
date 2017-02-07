@@ -37,3 +37,29 @@ function saveBookmark(event){
   //prevent form from submitting
   event.preventDefault();
 }
+
+// fetch bookmarks
+
+function fetchBookmarks(){
+    //get bookmarks from localStorage
+    var bookmarks = JSON.parse(localStorage.getItem('bookmarks'));
+
+    //get output id
+    var bookmarksResults = document.getElementById('bookmarksResults');
+
+    //build output
+    //take the var we just made and .inner function will put wtvr html we give it into that spot thru js
+    bookmarksResults.innerHTML = ;
+
+    //we want to loop through the bookmarks that are in localStorage and output them 1 by 1 inside of a div
+    for (var i = 0; i < bookmarks.length; i++){
+      var name = bookmarks[i].name;
+      var url = bookmarks[i].url;
+
+      bookmarksResults.innerHTML += '<div class ="well">' +
+                                    '<h3>' + name +
+                                    '</h3>' +
+                                    '</div>';
+
+    }
+}
