@@ -49,7 +49,7 @@ function fetchBookmarks(){
 
     //build output
     //take the var we just made and .inner function will put wtvr html we give it into that spot thru js
-    bookmarksResults.innerHTML = ;
+    bookmarksResults.innerHTML = '';
 
     //we want to loop through the bookmarks that are in localStorage and output them 1 by 1 inside of a div
     for (var i = 0; i < bookmarks.length; i++){
