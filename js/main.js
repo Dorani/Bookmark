@@ -58,6 +58,7 @@ function fetchBookmarks(){
 
       bookmarksResults.innerHTML += '<div class ="well">' +
                                     '<h3>' + name +
+                                    ' <a class="btn btn-default" target="_blank" href="'+url+'">Visit</a>'
                                     '</h3>' +
                                     '</div>';
 
