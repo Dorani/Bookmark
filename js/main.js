@@ -2,6 +2,9 @@
 document.getElementById('myForm').addEventListener('submit', saveBookmark);
 
 function saveBookmark(event){
-  console.log('it works!')
+  //Get form values
+  var siteName = document.getElementById('siteName');
+
+  //prevent form from submitting
   event.preventDefault();
 }
