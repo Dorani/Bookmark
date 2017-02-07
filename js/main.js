@@ -6,23 +6,12 @@ function saveBookmark(event){
   var siteName = document.getElementById('siteName').value;
   var siteUrl = document.getElementById('siteUrl').value;
 
-  //if either one of these are not here, then we will want to alert
-  if(!siteName || !siteUrl){
-    alert('please fill in form');
-    //in order for it to stop:
+  //if either one of these are not here, then we will want to alert, see function validate
+
+  if(!validateForm(siteName, siteUrl)){
     return false;
   }
-  //setting expression to format url
-  var expression = /[-a-zA-Z0-9@:%_\+.~#?&//=]{2,256}\.[a-z]{2,4}\b(\/[-a-zA-Z0-9@:%_\+.~#?&//=]*)?/gi;
-  var regex = new RegExp(expression);
-
-  //if match pass in RegExp
-  if(!siteUrl.match(regex)){
-    alert('please use valid url');
-    return false;
-  }
-
-  var bookmark = {
+    var bookmark = {
     name: siteName,
     url: siteUrl
   }
@@ -103,4 +92,22 @@ function fetchBookmarks(){
                                     '</div>';
 
     }
+}
+
+function validateForm(siteName, siteUrl){
+  if(!siteName || !siteUrl){
+    alert('please fill in form');
+    //in order for it to stop:
+    return false;
+  }
+  //setting expression to format url
+  var expression = /[-a-zA-Z0-9@:%_\+.~#?&//=]{2,256}\.[a-z]{2,4}\b(\/[-a-zA-Z0-9@:%_\+.~#?&//=]*)?/gi;
+  var regex = new RegExp(expression);
+
+  //if match pass in RegExp
+  if(!siteUrl.match(regex)){
+    alert('please use valid url');
+    return false;
+  }
+  return true;
 }
