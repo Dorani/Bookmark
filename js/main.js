@@ -17,7 +17,10 @@ function saveBookmark(event){
   var regex = new RegExp(expression);
 
   //if match pass in RegExp
-  
+  if(!siteUrl.match(regex)){
+    alert('please use valid url');
+    return false;
+  }
 
   var bookmark = {
     name: siteName,
