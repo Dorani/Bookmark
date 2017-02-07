@@ -38,6 +38,8 @@ function saveBookmark(event){
 
 
   }
+  // clear the form
+  document.getElementById('myForm').reset();
 
   //re-fetch bookmarks
   fetchBookmarks();
